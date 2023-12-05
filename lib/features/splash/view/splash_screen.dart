@@ -1,20 +1,46 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
 import 'package:mobileapp_scabies/core/constants/font_size.dart';
 import 'package:mobileapp_scabies/core/constants/font_weigth.dart';
+import 'package:mobileapp_scabies/features/auth/view/auth_screen.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    startSplashScreen();
+  }
+
+  startSplashScreen() async {
+    const duration = Duration(seconds: 3);
+    return Timer(duration, () {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => const AuthScreen(),
+        ),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primary500,
+      backgroundColor: AppColors.brandColor,
       body: Stack(
         children: [
           Center(
             child: Image.asset(
-              'assets/images/road_report_logo.png',
+              'assets/images/laras_app_logo.png',
               width: MediaQuery.of(context).size.width * 0.8,
             ),
           ),
@@ -41,16 +67,39 @@ class SplashScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      "assets/images/pis_logo.png",
+                    Container(
+                      color: AppColors.aqua100,
                       width: 37,
                       height: 37,
+                      child: const Center(
+                        child: Text(
+                          'Logo',
+                        ),
+                      ),
                     ),
-                    Image.asset(
-                      "assets/images/polinema.png",
-                      width: 48,
-                      height: 48,
+                    const SizedBox(
+                      width: 10,
                     ),
+                    Container(
+                      color: AppColors.aqua100,
+                      width: 37,
+                      height: 37,
+                      child: const Center(
+                        child: Text(
+                          'Logo',
+                        ),
+                      ),
+                    ),
+                    // Image.asset(
+                    //   "assets/images/pis_logo.png",
+                    //   width: 37,
+                    //   height: 37,
+                    // ),
+                    // Image.asset(
+                    //   "assets/images/polinema.png",
+                    //   width: 48,
+                    //   height: 48,
+                    // ),
                   ],
                 ),
               ],

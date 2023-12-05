@@ -147,4 +147,15 @@ class AppColors {
   static const Color rose700 = Color(0xff992A44);
   static const Color rose800 = Color(0xff661C2D);
   static const Color rose900 = Color(0xff330E17);
+
+  // Scabies Color
+
+  static const Color brandColor = Color(0xff6D27E8);
+  static const Color secondaryColor = Color(0xffF4F1F8);
+  static const Color blackColor = Color(0xff1D1617);
+  static const Color grayFirstColor = Color(0xff7B6F72);
+  static const Color graySecondColor = Color(0xffADA4A5);
+  static const Color grayThirdColor = Color(0xffDDDADA);
+  static const Color borderColor = Color(0xffF7F8F8);
+  static const Color white = Color(0xffFFFFFF);
 }

@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Road Report App',
       home: const SplashScreen(),
       theme: ThemeData().copyWith(
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary500),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.brandColor),
         scaffoldBackgroundColor: Colors.white,
         textTheme: GoogleFonts.interTextTheme(
           Theme.of(context).textTheme,
