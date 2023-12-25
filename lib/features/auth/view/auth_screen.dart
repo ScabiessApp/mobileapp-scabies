@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
 import 'package:mobileapp_scabies/core/constants/font_size.dart';
 import 'package:mobileapp_scabies/core/constants/font_weigth.dart';
+import 'package:mobileapp_scabies/features/dashboard/provider/dashboard_provider.dart';
+import 'package:mobileapp_scabies/features/dashboard/view/dashboard_screen.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
@@ -56,34 +58,43 @@ class AuthScreen extends StatelessWidget {
                     height: 82.0,
                   ),
                   //set consumer buat login
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 12.0),
-                    decoration: BoxDecoration(
-                      color: AppColors.brandColor,
-                      borderRadius: BorderRadius.circular(6.0),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          "assets/images/google.png",
-                          width: 24,
-                          height: 24,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => const DashboardScreen(),
                         ),
-                        const SizedBox(
-                          width: 8.0,
-                        ),
-                        const Text(
-                          "Masuk Dengan Gmail",
-                          style: TextStyle(
-                            fontSize: AppFontSize.actionMedium,
-                            fontWeight: AppFontWeight.actionSemiBold,
-                            color: AppColors.white,
-                            letterSpacing: 0.75,
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16.0, vertical: 12.0),
+                      decoration: BoxDecoration(
+                        color: AppColors.brandColor,
+                        borderRadius: BorderRadius.circular(6.0),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            "assets/images/google.png",
+                            width: 24,
+                            height: 24,
                           ),
-                        )
-                      ],
+                          const SizedBox(
+                            width: 8.0,
+                          ),
+                          const Text(
+                            "Masuk Dengan Gmail",
+                            style: TextStyle(
+                              fontSize: AppFontSize.actionMedium,
+                              fontWeight: AppFontWeight.actionSemiBold,
+                              color: AppColors.white,
+                              letterSpacing: 0.75,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
