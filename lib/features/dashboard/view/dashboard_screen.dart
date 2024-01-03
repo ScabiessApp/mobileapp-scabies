@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
 import 'package:mobileapp_scabies/features/dashboard/provider/dashboard_provider.dart';
+import 'package:mobileapp_scabies/features/scanning/widgets/camera_modal.dart';
 import 'package:provider/provider.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -19,7 +20,9 @@ class DashboardScreen extends StatelessWidget {
               : FloatingActionButton(
                   shape: const CircleBorder(),
                   backgroundColor: AppColors.brandColor,
-                  onPressed: () async {},
+                  onPressed: () async {
+                    await showCameraModal(context);
+                  },
                   child: const Icon(
                     IconlyLight.camera,
                     color: Colors.white,

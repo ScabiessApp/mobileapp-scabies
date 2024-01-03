@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobileapp_scabies/features/home/widgets/heading_widget.dart';
 import 'package:mobileapp_scabies/features/home/widgets/last_scan_widget.dart';
 import 'package:mobileapp_scabies/features/home/widgets/latest_widget.dart';
+import 'package:mobileapp_scabies/features/home/widgets/skin_problem_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,6 +24,10 @@ class HomeScreen extends StatelessWidget {
                 height: 24,
               ),
               LastScanWidget(),
+              SizedBox(
+                height: 24,
+              ),
+              SkinProblemWidget(),
               SizedBox(
                 height: 24,
               ),

@@ -152,6 +152,7 @@ class AppColors {
 
   static const Color brandColor = Color(0xff6D27E8);
   static const Color purpleColor = Color(0xffC58BF2);
+  static const Color purpleAccentColor = Color(0xffCEA0F1);
   static const Color secondaryColor = Color(0xffF4F1F8);
   static const Color blackColor = Color(0xff1D1617);
   static const Color grayFirstColor = Color(0xff7B6F72);

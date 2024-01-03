@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:mobileapp_scabies/core/state/finite_state.dart';
 import 'package:mobileapp_scabies/features/home/view/home_screen.dart';
+import 'package:mobileapp_scabies/features/scanning/view/scanner_result_screen.dart';
 
 class DashboardProvider with ChangeNotifier {
   int selectedIndex = 0;
@@ -29,7 +30,7 @@ class DashboardProvider with ChangeNotifier {
   // Pages untuk icon icon diatas
   final List<Widget> pages = [
     const HomeScreen(),
-    const HomeScreen(),
+    const ScannerResultScreen(),
     const HomeScreen(),
     const HomeScreen(),
     const HomeScreen(),
