@@ -8,6 +8,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
 import 'package:mobileapp_scabies/core/constants/font_size.dart';
 import 'package:mobileapp_scabies/core/constants/font_weigth.dart';
+import 'package:mobileapp_scabies/features/dashboard/provider/dashboard_provider.dart';
 import 'package:mobileapp_scabies/features/scanning/provider/scanner_provider.dart';
 import 'package:mobileapp_scabies/features/scanning/view/scanner_result_screen.dart';
 import 'package:provider/provider.dart';
@@ -127,6 +128,11 @@ Future<void> showCameraModal(BuildContext context) async {
                                           // Matikan Crop Image
                                           scannerProvider.cropImage();
 
+                                          Provider.of<DashboardProvider>(
+                                                  context,
+                                                  listen: false)
+                                              .setSelectedIndex(context, 3);
+
                                           Navigator.of(context).push(
                                             CupertinoPageRoute(
                                               builder: (context) =>
@@ -242,6 +248,11 @@ Future<void> showCameraModal(BuildContext context) async {
 
                                           // Matikan Crop Image
                                           scannerProvider.cropImage();
+
+                                          Provider.of<DashboardProvider>(
+                                                  context,
+                                                  listen: false)
+                                              .setSelectedIndex(context, 3);
 
                                           Navigator.of(context).push(
                                             CupertinoPageRoute(

@@ -11,8 +11,8 @@ class HistoryScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 24,
-              vertical: 24,
+              horizontal: 16,
+              vertical: 16,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

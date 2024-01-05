@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
-import 'package:mobileapp_scabies/core/constants/font_size.dart';
-import 'package:mobileapp_scabies/core/constants/font_weigth.dart';
 import 'package:mobileapp_scabies/features/auth/view/auth_screen.dart';
 
 class SplashScreen extends StatefulWidget {

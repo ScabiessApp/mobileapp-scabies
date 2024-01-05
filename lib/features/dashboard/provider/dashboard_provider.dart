@@ -3,7 +3,7 @@ import 'package:iconly/iconly.dart';
 import 'package:mobileapp_scabies/core/state/finite_state.dart';
 import 'package:mobileapp_scabies/features/history/view/history_screen.dart';
 import 'package:mobileapp_scabies/features/home/view/home_screen.dart';
-import 'package:mobileapp_scabies/features/scanning/view/scanner_result_screen.dart';
+import 'package:mobileapp_scabies/features/news/view/news_screen.dart';
 
 class DashboardProvider with ChangeNotifier {
   int selectedIndex = 0;
@@ -31,7 +31,7 @@ class DashboardProvider with ChangeNotifier {
   // Pages untuk icon icon diatas
   final List<Widget> pages = [
     const HomeScreen(),
-    const ScannerResultScreen(),
+    const NewsScreen(),
     const HomeScreen(),
     const HistoryScreen(),
     const HomeScreen(),
