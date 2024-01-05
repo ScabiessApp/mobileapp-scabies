@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
+import 'package:mobileapp_scabies/features/news/view/news_detail_screen.dart';
 import 'package:mobileapp_scabies/features/news/widget/item_widget/news_item_widget.dart';
 
 class NewsScreen extends StatefulWidget {
@@ -94,18 +96,27 @@ class _NewsScreenState extends State<NewsScreen> {
               const SizedBox(
                 height: 24,
               ),
-              CarouselSlider(
-                options: CarouselOptions(
-                  autoPlay: true,
-                  aspectRatio: 2.0,
-                  enlargeCenterPage: false,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      _currentIndex = index;
-                    });
-                  },
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    CupertinoPageRoute(
+                      builder: (context) => const NewsDetailScreen(),
+                    ),
+                  );
+                },
+                child: CarouselSlider(
+                  options: CarouselOptions(
+                    autoPlay: true,
+                    aspectRatio: 2.0,
+                    enlargeCenterPage: false,
+                    onPageChanged: (index, reason) {
+                      setState(() {
+                        _currentIndex = index;
+                      });
+                    },
+                  ),
+                  items: imageSliders,
                 ),
-                items: imageSliders,
               ),
               const SizedBox(
                 height: 16,

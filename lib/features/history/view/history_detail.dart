@@ -46,7 +46,10 @@ class HistoryDetailScreen extends StatelessWidget {
                       color: AppColors.brandColor.withOpacity(0.5),
                     ),
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _showFullScreenImage(
+                            context, 'assets/images/scabies_test.png');
+                      },
                       icon: const Icon(
                         Icons.zoom_in,
                         color: Colors
@@ -207,4 +210,58 @@ class HistoryDetailScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+void _showFullScreenImage(BuildContext context, String image) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        contentPadding: const EdgeInsets.all(0),
+        backgroundColor: Colors.transparent,
+        content: SizedBox(
+          width: 400,
+          height: MediaQuery.of(context).size.width * 0.8,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Image.asset(
+                  image,
+                  fit: BoxFit.cover,
+                  height: double.infinity,
+                  width: double.infinity,
+                ),
+              ),
+              Positioned(
+                top: 8,
+                right: 8,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Colors
+                          .black12, // Ganti dengan warna latar belakang yang diinginkan
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Icon(
+                        Icons.close,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
 }
