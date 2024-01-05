@@ -4,6 +4,7 @@ import 'package:mobileapp_scabies/core/state/finite_state.dart';
 import 'package:mobileapp_scabies/features/history/view/history_screen.dart';
 import 'package:mobileapp_scabies/features/home/view/home_screen.dart';
 import 'package:mobileapp_scabies/features/news/view/news_screen.dart';
+import 'package:mobileapp_scabies/features/profile/view/profile_screen.dart';
 
 class DashboardProvider with ChangeNotifier {
   int selectedIndex = 0;
@@ -34,7 +35,7 @@ class DashboardProvider with ChangeNotifier {
     const NewsScreen(),
     const HomeScreen(),
     const HistoryScreen(),
-    const HomeScreen(),
+    const ProfileScreen(),
   ];
 
   // Set Pages yang dipilih

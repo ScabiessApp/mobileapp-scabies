@@ -36,7 +36,7 @@ class AuthScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Laras App',
+                    'Insert App',
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.w900,
