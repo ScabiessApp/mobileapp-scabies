@@ -5,8 +5,8 @@ import 'package:mobileapp_scabies/core/constants/colors.dart';
 import 'package:mobileapp_scabies/features/history/view/history_detail.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
-class LatestItemWidget extends StatelessWidget {
-  const LatestItemWidget({super.key});
+class HistoryItemWidget extends StatelessWidget {
+  const HistoryItemWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

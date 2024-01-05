@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
 
-class ScannerResultScreen extends StatelessWidget {
-  const ScannerResultScreen({super.key});
+class LastScanDetailScreen extends StatelessWidget {
+  const LastScanDetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

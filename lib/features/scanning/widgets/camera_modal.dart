@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:image_cropper/image_cropper.dart';
@@ -8,6 +9,7 @@ import 'package:mobileapp_scabies/core/constants/colors.dart';
 import 'package:mobileapp_scabies/core/constants/font_size.dart';
 import 'package:mobileapp_scabies/core/constants/font_weigth.dart';
 import 'package:mobileapp_scabies/features/scanning/provider/scanner_provider.dart';
+import 'package:mobileapp_scabies/features/scanning/view/scanner_result_screen.dart';
 import 'package:provider/provider.dart';
 
 Future<void> showCameraModal(BuildContext context) async {
@@ -19,7 +21,7 @@ Future<void> showCameraModal(BuildContext context) async {
       return Consumer<ScannerProvider>(builder: (context, scannerProvider, _) {
         return scannerProvider.isCropped
             ? Container(
-                height: 390,
+                height: 250,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
@@ -124,6 +126,13 @@ Future<void> showCameraModal(BuildContext context) async {
 
                                           // Matikan Crop Image
                                           scannerProvider.cropImage();
+
+                                          Navigator.of(context).push(
+                                            CupertinoPageRoute(
+                                              builder: (context) =>
+                                                  const ScannerResultScreen(),
+                                            ),
+                                          );
                                         }
                                       }
                                     } else {
@@ -233,6 +242,13 @@ Future<void> showCameraModal(BuildContext context) async {
 
                                           // Matikan Crop Image
                                           scannerProvider.cropImage();
+
+                                          Navigator.of(context).push(
+                                            CupertinoPageRoute(
+                                              builder: (context) =>
+                                                  const ScannerResultScreen(),
+                                            ),
+                                          );
                                         }
                                       }
                                     } else {
