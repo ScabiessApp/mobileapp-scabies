@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
 import 'package:mobileapp_scabies/core/keys/navigator_key.dart';
 import 'package:mobileapp_scabies/features/dashboard/provider/dashboard_provider.dart';
+import 'package:mobileapp_scabies/features/history/provider/history_provider.dart';
 import 'package:mobileapp_scabies/features/scanning/provider/scanner_provider.dart';
 import 'package:mobileapp_scabies/features/splash/view/splash_screen.dart';
 import 'package:provider/provider.dart';
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => ScannerProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => HistoryProvider(),
         ),
       ],
       child: MaterialApp(

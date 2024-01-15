@@ -3,7 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:image/image.dart';
+import 'package:mobileapp_scabies/features/history/models/model/history_model.dart';
+import 'package:mobileapp_scabies/features/history/provider/history_provider.dart';
+import 'package:mobileapp_scabies/features/scanning/models/model/scanning_response_model.dart';
+import 'package:mobileapp_scabies/features/scanning/models/service/scanning_service.dart';
 import 'package:path/path.dart' as path;
+import 'package:provider/provider.dart';
 
 class ScannerProvider with ChangeNotifier {
   // Form Key
@@ -34,6 +39,9 @@ class ScannerProvider with ChangeNotifier {
     isCropped = !isCropped;
     notifyListeners();
   }
+
+  // Service
+  final scanningService = ScanningService();
 
 // Compresser image
   Future<File> compressImage(File croppedFile) async {
@@ -66,5 +74,38 @@ class ScannerProvider with ChangeNotifier {
     }
 
     return compressedFiles;
+  }
+
+  Future<void> addImage(
+    BuildContext context,
+    File fileUpload,
+    String description,
+  ) async {
+    HistoryModel historyModel = HistoryModel(
+      id: UniqueKey().toString(),
+      imageFile: fileUpload,
+      description: description,
+      dateTime: DateTime.now(),
+    );
+
+    Provider.of<HistoryProvider>(context, listen: false)
+        .historyList
+        .add(historyModel);
+
+    notifyListeners();
+  }
+
+  Future<String> checkScabies(
+    BuildContext context,
+    File fileUpload,
+  ) async {
+    try {
+      ScanningResponseModel result =
+          await scanningService.checkScabiesAI(fileUpload.path);
+
+      return result.predictedLabel;
+    } catch (e) {
+      return e.toString();
+    }
   }
 }

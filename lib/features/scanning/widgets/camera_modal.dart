@@ -121,24 +121,37 @@ Future<void> showCameraModal(BuildContext context) async {
                                         //   context,
                                         //   fileUpload,
                                         // );
+                                        final scabiesResult =
+                                            await scannerProvider.checkScabies(
+                                                context, fileUpload);
 
                                         if (context.mounted) {
-                                          Navigator.pop(context);
-
-                                          // Matikan Crop Image
-                                          scannerProvider.cropImage();
-
-                                          Provider.of<DashboardProvider>(
-                                                  context,
-                                                  listen: false)
-                                              .setSelectedIndex(context, 3);
-
-                                          Navigator.of(context).push(
-                                            CupertinoPageRoute(
-                                              builder: (context) =>
-                                                  const ScannerResultScreen(),
-                                            ),
+                                          await scannerProvider.addImage(
+                                            context,
+                                            fileUpload,
+                                            scabiesResult,
                                           );
+                                          if (context.mounted) {
+                                            Navigator.pop(context);
+
+                                            // Matikan Crop Image
+                                            scannerProvider.cropImage();
+
+                                            Provider.of<DashboardProvider>(
+                                                    context,
+                                                    listen: false)
+                                                .setSelectedIndex(context, 3);
+
+                                            Navigator.of(context).push(
+                                              CupertinoPageRoute(
+                                                builder: (context) =>
+                                                    ScannerResultScreen(
+                                                  scabiesResult: scabiesResult,
+                                                  file: fileUpload,
+                                                ),
+                                              ),
+                                            );
+                                          }
                                         }
                                       }
                                     } else {
@@ -242,24 +255,38 @@ Future<void> showCameraModal(BuildContext context) async {
                                         //   context,
                                         //   fileUpload,
                                         // );
+                                        final scabiesResult =
+                                            await scannerProvider.checkScabies(
+                                                context, fileUpload);
 
                                         if (context.mounted) {
-                                          Navigator.pop(context);
-
-                                          // Matikan Crop Image
-                                          scannerProvider.cropImage();
-
-                                          Provider.of<DashboardProvider>(
-                                                  context,
-                                                  listen: false)
-                                              .setSelectedIndex(context, 3);
-
-                                          Navigator.of(context).push(
-                                            CupertinoPageRoute(
-                                              builder: (context) =>
-                                                  const ScannerResultScreen(),
-                                            ),
+                                          await scannerProvider.addImage(
+                                            context,
+                                            fileUpload,
+                                            scabiesResult,
                                           );
+
+                                          if (context.mounted) {
+                                            Navigator.pop(context);
+
+                                            // Matikan Crop Image
+                                            scannerProvider.cropImage();
+
+                                            Provider.of<DashboardProvider>(
+                                                    context,
+                                                    listen: false)
+                                                .setSelectedIndex(context, 3);
+
+                                            Navigator.of(context).push(
+                                              CupertinoPageRoute(
+                                                builder: (context) =>
+                                                    ScannerResultScreen(
+                                                  scabiesResult: scabiesResult,
+                                                  file: fileUpload,
+                                                ),
+                                              ),
+                                            );
+                                          }
                                         }
                                       }
                                     } else {
