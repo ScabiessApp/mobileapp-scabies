@@ -115,7 +115,7 @@ class ScannerResultScreen extends StatelessWidget {
                   Text(
                     scabiesResult == 'SCABIES'
                         ? 'Scabies is a parasitic infestation caused by tiny mites that burrow into the skin and lay eggs, causing intense itching and a rash. Scabies can lead to skin sores and serious complications like septicaemia (a bloodstream infection), heart disease and kidney problems.'
-                        : 'Not Scabies',
+                        : 'Your result is not scabies. However, if you are experiencing severe or challenging skin issues, it is recommended to seek immediate assistance from a medical professional. You can contact a doctor using the information provided below:',
                     style: const TextStyle(
                       fontSize: 14,
                     ),

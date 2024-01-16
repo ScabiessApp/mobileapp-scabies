@@ -11,13 +11,13 @@ class LatestItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.of(context).push(
-          CupertinoPageRoute(
-            builder: (context) => const HistoryDetailScreen(),
-          ),
-        );
-      },
+      // onTap: () {
+      //   Navigator.of(context).push(
+      //     CupertinoPageRoute(
+      //       builder: (context) => const HistoryDetailScreen(),
+      //     ),
+      //   );
+      // },
       child: Container(
         padding: const EdgeInsets.all(14),
         decoration: BoxDecoration(

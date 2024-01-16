@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
@@ -6,7 +8,15 @@ import 'package:mobileapp_scabies/features/history/view/history_detail.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class HistoryItemWidget extends StatelessWidget {
-  const HistoryItemWidget({super.key});
+  final File file;
+  final String id;
+  final String scabiesResult;
+  const HistoryItemWidget({
+    super.key,
+    required this.file,
+    required this.id,
+    required this.scabiesResult,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +24,10 @@ class HistoryItemWidget extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           CupertinoPageRoute(
-            builder: (context) => const HistoryDetailScreen(),
+            builder: (context) => HistoryDetailScreen(
+              scabiesResult: scabiesResult,
+              file: file,
+            ),
           ),
         );
       },
@@ -36,11 +49,12 @@ class HistoryItemWidget extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(
-                  30), // Half of the width/height for a perfect circle
+                  25), // Half of the width/height for a perfect circle
               child: Container(
                 width: 50.0,
                 height: 50.0,
-                color: AppColors.primary100, // Change the color as needed
+                color: AppColors.primary100,
+                child: Image.file(file),
               ),
             ),
             const SizedBox(
@@ -50,9 +64,9 @@ class HistoryItemWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Hand',
-                    style: TextStyle(
+                  Text(
+                    id,
+                    style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
                     ),
@@ -60,9 +74,9 @@ class HistoryItemWidget extends StatelessWidget {
                   const SizedBox(
                     height: 2,
                   ),
-                  const Text(
-                    '60%',
-                    style: TextStyle(
+                  Text(
+                    scabiesResult == 'SCABIES' ? 'Scabies' : 'Not Scabies',
+                    style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                       color: AppColors.graySecondColor,

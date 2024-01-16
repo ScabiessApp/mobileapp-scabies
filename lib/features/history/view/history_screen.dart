@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobileapp_scabies/features/history/widgets/history_widget.dart';
+import 'package:mobileapp_scabies/features/history/widgets/old_history_widget.dart';
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({super.key});
@@ -51,7 +52,7 @@ class HistoryScreen extends StatelessWidget {
                 SizedBox(
                   height: 16,
                 ),
-                HistoryWidget(),
+                OldHistoryWidget(),
               ],
             ),
           ),

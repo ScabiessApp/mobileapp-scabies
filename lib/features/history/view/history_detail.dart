@@ -1,9 +1,18 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
 
 class HistoryDetailScreen extends StatelessWidget {
-  const HistoryDetailScreen({super.key});
+  final String scabiesResult;
+  final File file;
+
+  const HistoryDetailScreen({
+    super.key,
+    required this.scabiesResult,
+    required this.file,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +22,7 @@ class HistoryDetailScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Image.asset('assets/images/scabies_test.png'),
+                Image.file(file),
                 Positioned(
                   left: 16,
                   top: 40,
@@ -47,8 +56,7 @@ class HistoryDetailScreen extends StatelessWidget {
                     ),
                     child: IconButton(
                       onPressed: () {
-                        _showFullScreenImage(
-                            context, 'assets/images/scabies_test.png');
+                        _showFullScreenImage(context, file);
                       },
                       icon: const Icon(
                         Icons.zoom_in,
@@ -71,12 +79,12 @@ class HistoryDetailScreen extends StatelessWidget {
                       ),
                       color: AppColors.white,
                     ),
-                    child: const Column(
+                    child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 35,
                         ),
-                        Text(
+                        const Text(
                           'The Results is :',
                           style: TextStyle(
                             fontSize: 20,
@@ -84,8 +92,8 @@ class HistoryDetailScreen extends StatelessWidget {
                           textAlign: TextAlign.center,
                         ),
                         Text(
-                          'Scabies',
-                          style: TextStyle(
+                          scabiesResult,
+                          style: const TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
                             color: AppColors.brandColor,
@@ -102,13 +110,21 @@ class HistoryDetailScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
-                  const Text(
-                    'Scabies is a parasitic infestation caused by tiny mites that burrow into the skin and lay eggs, causing intense itching and a rash. Scabies can lead to skin sores and serious complications like septicaemia (a bloodstream infection), heart disease and kidney problems.',
-                    style: TextStyle(
-                      fontSize: 14,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+                  scabiesResult == 'SCABIES'
+                      ? const Text(
+                          'Scabies is a parasitic infestation caused by tiny mites that burrow into the skin and lay eggs, causing intense itching and a rash. Scabies can lead to skin sores and serious complications like septicaemia (a bloodstream infection), heart disease and kidney problems.',
+                          style: TextStyle(
+                            fontSize: 14,
+                          ),
+                          textAlign: TextAlign.center,
+                        )
+                      : const Text(
+                          'Your result is not scabies. However, if you are experiencing severe or challenging skin issues, it is recommended to seek immediate assistance from a medical professional. You can contact a doctor using the information provided below:',
+                          style: TextStyle(
+                            fontSize: 14,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                   const SizedBox(
                     height: 16,
                   ),
@@ -212,7 +228,7 @@ class HistoryDetailScreen extends StatelessWidget {
   }
 }
 
-void _showFullScreenImage(BuildContext context, String image) {
+void _showFullScreenImage(BuildContext context, File image) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -227,7 +243,7 @@ void _showFullScreenImage(BuildContext context, String image) {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
-                child: Image.asset(
+                child: Image.file(
                   image,
                   fit: BoxFit.cover,
                   height: double.infinity,
