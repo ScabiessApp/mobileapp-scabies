@@ -41,7 +41,7 @@ class NewsItemWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    'Sunday, 7 January 2024',
+                    'Minggu, 7 Januari 2024',
                     style: TextStyle(
                       fontSize: 10,
                       fontWeight: FontWeight.w500,

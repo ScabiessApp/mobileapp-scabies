@@ -86,7 +86,7 @@ class _NewsScreenState extends State<NewsScreen> {
                   right: 16,
                 ),
                 child: Text(
-                  'News',
+                  'Berita',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -137,7 +137,7 @@ class _NewsScreenState extends State<NewsScreen> {
                   right: 16,
                 ),
                 child: Text(
-                  'Latest News',
+                  'Berita Terkini',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,

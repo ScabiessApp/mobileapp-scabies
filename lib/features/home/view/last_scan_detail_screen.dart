@@ -103,7 +103,7 @@ class LastScanDetailScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const Text(
-                    'Scabies is a parasitic infestation caused by tiny mites that burrow into the skin and lay eggs, causing intense itching and a rash. Scabies can lead to skin sores and serious complications like septicaemia (a bloodstream infection), heart disease and kidney problems.',
+                    'Scabies merupakan penyakit kulit menular yang disebabkan oleh masuknya tungau kecil ke dalam lapisan kulit luar. Scabies dapat menyebabkan gatal intens dan ruam. Scabies dapat menyebabkan luka pada kulit dan komplikasi serius seperti septisemia (infeksi aliran darah), penyakit jantung, dan masalah ginjal.',
                     style: TextStyle(
                       fontSize: 14,
                     ),

@@ -19,7 +19,7 @@ class LatestWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  'Latest Result',
+                  'Lihat akurasi terakhir',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -31,7 +31,7 @@ class LatestWidget extends StatelessWidget {
                         .setSelectedIndex(context, 3);
                   },
                   child: const Text(
-                    'See More',
+                    'Lebih banyak',
                     style: TextStyle(
                       fontSize: 14,
                       color: AppColors.graySecondColor,
@@ -65,7 +65,7 @@ class LatestWidget extends StatelessWidget {
                     ),
                     child: const Center(
                       child: Text(
-                        'History is empty.',
+                        'Riwayat kosong.',
                       ),
                     ),
                   )
@@ -76,7 +76,7 @@ class LatestWidget extends StatelessWidget {
                     itemBuilder: (BuildContext context, int index) {
                       return HistoryItemWidget(
                         file: historyProvider.historyList[index].imageFile,
-                        id: 'Scan Result ${(index + 1)}',
+                        id: 'Hasil Scan ${(index + 1)}',
                         scabiesResult:
                             historyProvider.historyList[index].description,
                       );

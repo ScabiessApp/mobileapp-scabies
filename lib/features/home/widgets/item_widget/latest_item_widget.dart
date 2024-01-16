@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
-import 'package:mobileapp_scabies/features/history/view/history_detail.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class LatestItemWidget extends StatelessWidget {

@@ -15,10 +15,11 @@ class HeadingWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Hello!',
+                'Selamat Datang',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
                   fontWeight: FontWeight.normal,
+                  color: AppColors.graySecondColor,
                 ),
               ),
               Text(

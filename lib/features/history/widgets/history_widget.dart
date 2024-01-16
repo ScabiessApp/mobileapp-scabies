@@ -36,7 +36,7 @@ class HistoryWidget extends StatelessWidget {
                     ),
                     child: const Center(
                       child: Text(
-                        'History is empty.',
+                        'Riwayat kosong.',
                       ),
                     ),
                   )
@@ -47,7 +47,7 @@ class HistoryWidget extends StatelessWidget {
                     itemBuilder: (BuildContext context, int index) {
                       return HistoryItemWidget(
                         file: historyProvider.historyList[index].imageFile,
-                        id: 'Scan Result ${(index + 1)}',
+                        id: 'Hasil Scan ${(index + 1)}',
                         scabiesResult:
                             historyProvider.historyList[index].description,
                       );

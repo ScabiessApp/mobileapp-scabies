@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
+import 'package:mobileapp_scabies/features/scanning/widgets/camera_modal.dart';
 
 class SkinProblemWidget extends StatelessWidget {
   const SkinProblemWidget({super.key});
@@ -21,9 +22,9 @@ class SkinProblemWidget extends StatelessWidget {
         children: [
           const Flexible(
             child: Text(
-              'Have skin problem?',
+              'Apakah anda memiliki masalah kulit?',
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 14,
                 color: AppColors.blackColor,
                 fontWeight: FontWeight.w500,
               ),
@@ -36,9 +37,11 @@ class SkinProblemWidget extends StatelessWidget {
             style: const ButtonStyle(
               backgroundColor: MaterialStatePropertyAll(AppColors.brandColor),
             ),
-            onPressed: () {},
+            onPressed: () async {
+              await showCameraModal(context);
+            },
             child: const Text(
-              'Check',
+              'Cek!',
               style: TextStyle(
                 color: AppColors.white,
               ),

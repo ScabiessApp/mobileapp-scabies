@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
 import 'package:mobileapp_scabies/features/history/view/history_detail.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 
 class HistoryItemWidget extends StatelessWidget {
   final File file;
@@ -72,27 +71,15 @@ class HistoryItemWidget extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 2,
+                    height: 4,
                   ),
                   Text(
-                    scabiesResult == 'SCABIES' ? 'Scabies' : 'Not Scabies',
+                    scabiesResult == 'SCABIES' ? 'Scabies' : 'Bukan Scabies',
                     style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                       color: AppColors.graySecondColor,
                     ),
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  LinearPercentIndicator(
-                    padding: const EdgeInsets.all(0),
-                    animation: true,
-                    lineHeight: 14.0,
-                    animationDuration: 1000,
-                    percent: 0.6,
-                    barRadius: const Radius.circular(10),
-                    progressColor: Colors.greenAccent,
                   ),
                 ],
               ),

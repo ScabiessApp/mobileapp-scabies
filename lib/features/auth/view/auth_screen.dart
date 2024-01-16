@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
 import 'package:mobileapp_scabies/core/constants/font_size.dart';
 import 'package:mobileapp_scabies/core/constants/font_weigth.dart';
@@ -23,7 +24,7 @@ class AuthScreen extends StatelessWidget {
               ),
               image: DecorationImage(
                 image: AssetImage(
-                  "assets/images/auth_image.png",
+                  "assets/images/auth_image_2.png",
                 ),
                 fit: BoxFit.cover,
               ),
@@ -67,24 +68,23 @@ class AuthScreen extends StatelessWidget {
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 16.0, vertical: 12.0),
+                          horizontal: 10.0, vertical: 12.0),
                       decoration: BoxDecoration(
                         color: AppColors.brandColor,
                         borderRadius: BorderRadius.circular(6.0),
                       ),
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.asset(
-                            "assets/images/google.png",
-                            width: 24,
-                            height: 24,
+                          Icon(
+                            IconlyLight.search,
+                            color: Colors.white,
                           ),
-                          const SizedBox(
+                          SizedBox(
                             width: 8.0,
                           ),
-                          const Text(
-                            "Masuk Dengan Gmail",
+                          Text(
+                            "Mulai Sekarang",
                             style: TextStyle(
                               fontSize: AppFontSize.actionMedium,
                               fontWeight: AppFontWeight.actionSemiBold,

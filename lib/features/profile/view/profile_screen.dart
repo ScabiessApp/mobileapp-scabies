@@ -88,12 +88,12 @@ class ProfileScreen extends StatelessWidget {
                             width: 8,
                           ),
                           Flexible(
-                            child: Text('Contact Us'),
+                            child: Text('Kontak Kami'),
                           ),
                         ],
                       ),
                       const SizedBox(
-                        height: 8,
+                        height: 14,
                       ),
                       const Row(
                         children: [
@@ -105,12 +105,12 @@ class ProfileScreen extends StatelessWidget {
                             width: 8,
                           ),
                           Flexible(
-                            child: Text('Privacy Police'),
+                            child: Text('Privasi Polisi'),
                           ),
                         ],
                       ),
                       const SizedBox(
-                        height: 8,
+                        height: 14,
                       ),
                       const Row(
                         children: [
@@ -122,12 +122,12 @@ class ProfileScreen extends StatelessWidget {
                             width: 8,
                           ),
                           Flexible(
-                            child: Text('Settings'),
+                            child: Text('Pengaturan'),
                           ),
                         ],
                       ),
                       const SizedBox(
-                        height: 8,
+                        height: 14,
                       ),
                       GestureDetector(
                         onTap: () {
@@ -148,7 +148,7 @@ class ProfileScreen extends StatelessWidget {
                             ),
                             Flexible(
                               child: Text(
-                                'Log Out',
+                                'Keluar',
                                 style: TextStyle(
                                   color: AppColors.error500,
                                 ),

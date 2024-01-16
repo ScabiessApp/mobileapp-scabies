@@ -19,7 +19,7 @@ class HistoryScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'History',
+                  'Riwayat',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -29,7 +29,7 @@ class HistoryScreen extends StatelessWidget {
                   height: 24,
                 ),
                 Text(
-                  'Today\'s Results',
+                  'Riwayat Hari Ini',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.normal,
@@ -43,7 +43,7 @@ class HistoryScreen extends StatelessWidget {
                   height: 24,
                 ),
                 Text(
-                  'Older\'s Results',
+                  'Riwayat Terdahulu',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.normal,

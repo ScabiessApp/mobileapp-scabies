@@ -114,8 +114,8 @@ class ScannerResultScreen extends StatelessWidget {
                 children: [
                   Text(
                     scabiesResult == 'SCABIES'
-                        ? 'Scabies is a parasitic infestation caused by tiny mites that burrow into the skin and lay eggs, causing intense itching and a rash. Scabies can lead to skin sores and serious complications like septicaemia (a bloodstream infection), heart disease and kidney problems.'
-                        : 'Your result is not scabies. However, if you are experiencing severe or challenging skin issues, it is recommended to seek immediate assistance from a medical professional. You can contact a doctor using the information provided below:',
+                        ? 'Scabies merupakan penyakit kulit menular yang disebabkan oleh masuknya tungau kecil ke dalam lapisan kulit luar. Scabies dapat menyebabkan gatal intens dan ruam. Scabies dapat menyebabkan luka pada kulit dan komplikasi serius seperti septisemia (infeksi aliran darah), penyakit jantung, dan masalah ginjal.'
+                        : 'Hasil deteksi menyatakan bukanlah Scabies. Namun, jika Anda mengalami masalah pada kulit, kami menyarankan untuk segera mencari bantuan dari tenaga medis. Anda dapat menghubungi dokter menggunakan informasi yang disediakan di bawah ini:',
                     style: const TextStyle(
                       fontSize: 14,
                     ),

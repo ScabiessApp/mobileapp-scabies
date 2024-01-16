@@ -85,7 +85,7 @@ class HistoryDetailScreen extends StatelessWidget {
                           height: 35,
                         ),
                         const Text(
-                          'The Results is :',
+                          'Hasil Deteksi :',
                           style: TextStyle(
                             fontSize: 20,
                           ),
@@ -112,14 +112,14 @@ class HistoryDetailScreen extends StatelessWidget {
                 children: [
                   scabiesResult == 'SCABIES'
                       ? const Text(
-                          'Scabies is a parasitic infestation caused by tiny mites that burrow into the skin and lay eggs, causing intense itching and a rash. Scabies can lead to skin sores and serious complications like septicaemia (a bloodstream infection), heart disease and kidney problems.',
+                          'Scabies merupakan penyakit kulit menular yang disebabkan oleh masuknya tungau kecil ke dalam lapisan kulit luar. Scabies dapat menyebabkan gatal intens dan ruam. Scabies dapat menyebabkan luka pada kulit dan komplikasi serius seperti septisemia (infeksi aliran darah), penyakit jantung, dan masalah ginjal.',
                           style: TextStyle(
                             fontSize: 14,
                           ),
                           textAlign: TextAlign.center,
                         )
                       : const Text(
-                          'Your result is not scabies. However, if you are experiencing severe or challenging skin issues, it is recommended to seek immediate assistance from a medical professional. You can contact a doctor using the information provided below:',
+                          'Hasil deteksi menyatakan bukanlah Scabies. Namun, jika Anda mengalami masalah pada kulit, kami menyarankan untuk segera mencari bantuan dari tenaga medis. Anda dapat menghubungi dokter menggunakan informasi yang disediakan di bawah ini:',
                           style: TextStyle(
                             fontSize: 14,
                           ),
