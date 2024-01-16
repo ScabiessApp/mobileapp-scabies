@@ -94,7 +94,7 @@ class ScannerResultScreen extends StatelessWidget {
                         Text(
                           scabiesResult == 'SCABIES'
                               ? 'Scabies'
-                              : 'Not Scabies',
+                              : 'Bukan Scabies',
                           style: const TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,

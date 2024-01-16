@@ -100,8 +100,14 @@ class ScannerProvider with ChangeNotifier {
     File fileUpload,
   ) async {
     try {
+      // Compress
+      final fileAfterCompress = await compressImage(fileUpload);
+
       ScanningResponseModel result =
-          await scanningService.checkScabiesAI(fileUpload.path);
+          await scanningService.checkScabiesAI(fileAfterCompress.path);
+
+      // ScanningResponseModel result =
+      //     await scanningService.checkScabiesAI(fileUpload.path);
 
       return result.predictedLabel;
     } catch (e) {

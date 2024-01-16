@@ -39,7 +39,7 @@ class ProfileScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Stefany Wong',
+                            'Alvira Dewi Septyan',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 18,
@@ -47,7 +47,7 @@ class ProfileScreen extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            'stefanywong@gmail.com',
+                            'alviradewiseptyan@gmail.com',
                             style: TextStyle(
                               fontWeight: FontWeight.normal,
                               fontSize: 14,

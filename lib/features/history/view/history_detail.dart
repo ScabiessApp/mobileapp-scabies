@@ -92,7 +92,9 @@ class HistoryDetailScreen extends StatelessWidget {
                           textAlign: TextAlign.center,
                         ),
                         Text(
-                          scabiesResult,
+                          scabiesResult == 'SCABIES'
+                              ? 'Scabies'
+                              : 'Bukan Scabies',
                           style: const TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,

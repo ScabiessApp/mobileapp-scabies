@@ -23,7 +23,7 @@ class HeadingWidget extends StatelessWidget {
                 ),
               ),
               Text(
-                'Steffany Wong',
+                'Alvira Dewi Septyan',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w900,
