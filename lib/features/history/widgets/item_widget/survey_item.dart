@@ -116,7 +116,7 @@ class _SurveyItemState extends State<SurveyItem> {
                 Text(
                   widget.pertanyaanTiga,
                   style: const TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
                   ),
                 ),
@@ -126,7 +126,7 @@ class _SurveyItemState extends State<SurveyItem> {
                 const Text(
                   'Pertanyaan 4',
                   style: TextStyle(
-                    fontWeight: FontWeight.normal,
+                    fontWeight: FontWeight.bold,
                     fontSize: AppFontSize.caption,
                   ),
                 ),
