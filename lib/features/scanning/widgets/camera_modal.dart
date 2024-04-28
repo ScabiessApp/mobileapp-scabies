@@ -135,6 +135,7 @@ Future<void> showCameraModal(BuildContext context) async {
                                             );
                                             if (context.mounted) {
                                               Navigator.pop(context);
+                                              Navigator.pop(context);
 
                                               // Matikan Crop Image
                                               scannerProvider.cropImage();
@@ -144,16 +145,42 @@ Future<void> showCameraModal(BuildContext context) async {
                                                       listen: false)
                                                   .setSelectedIndex(context, 3);
 
-                                              Navigator.of(context).push(
+                                              await Navigator.of(context).push(
                                                 CupertinoPageRoute(
                                                   builder: (context) =>
                                                       ScannerResultScreen(
                                                     scabiesResult:
                                                         scabiesResult,
                                                     file: fileUpload,
+                                                    namaLengkap: scannerProvider
+                                                        .namaLengkapController
+                                                        .text,
+                                                    jenisKelamin:
+                                                        scannerProvider
+                                                                .jenisKelamin ??
+                                                            '-',
+                                                    noHp: scannerProvider
+                                                        .noHpController.text,
+                                                    alamat: scannerProvider
+                                                        .alamatController.text,
+                                                    pertanyaanSatu: scannerProvider
+                                                        .pertanyaanSatuController
+                                                        .text,
+                                                    pertanyaanDua: scannerProvider
+                                                        .pertanyaanDuaController
+                                                        .text,
+                                                    pertanyaanTiga: scannerProvider
+                                                        .pertanyaanTigaController
+                                                        .text,
+                                                    pertanyaanEmpat: scannerProvider
+                                                        .pertanyaanEmpatController
+                                                        .text,
                                                   ),
                                                 ),
                                               );
+
+                                              scannerProvider
+                                                  .clearDataTesScabies();
                                             }
                                           }
                                         }
@@ -162,6 +189,7 @@ Future<void> showCameraModal(BuildContext context) async {
                                           // Matikan Crop Image
                                           scannerProvider.cropImage();
 
+                                          Navigator.pop(context);
                                           Navigator.pop(context);
                                         }
                                       }
@@ -274,6 +302,7 @@ Future<void> showCameraModal(BuildContext context) async {
 
                                             if (context.mounted) {
                                               Navigator.pop(context);
+                                              Navigator.pop(context);
 
                                               // Matikan Crop Image
                                               scannerProvider.cropImage();
@@ -283,16 +312,42 @@ Future<void> showCameraModal(BuildContext context) async {
                                                       listen: false)
                                                   .setSelectedIndex(context, 3);
 
-                                              Navigator.of(context).push(
+                                              await Navigator.of(context).push(
                                                 CupertinoPageRoute(
                                                   builder: (context) =>
                                                       ScannerResultScreen(
                                                     scabiesResult:
                                                         scabiesResult,
                                                     file: fileUpload,
+                                                    namaLengkap: scannerProvider
+                                                        .namaLengkapController
+                                                        .text,
+                                                    jenisKelamin:
+                                                        scannerProvider
+                                                                .jenisKelamin ??
+                                                            '-',
+                                                    noHp: scannerProvider
+                                                        .noHpController.text,
+                                                    alamat: scannerProvider
+                                                        .alamatController.text,
+                                                    pertanyaanSatu: scannerProvider
+                                                        .pertanyaanSatuController
+                                                        .text,
+                                                    pertanyaanDua: scannerProvider
+                                                        .pertanyaanDuaController
+                                                        .text,
+                                                    pertanyaanTiga: scannerProvider
+                                                        .pertanyaanTigaController
+                                                        .text,
+                                                    pertanyaanEmpat: scannerProvider
+                                                        .pertanyaanEmpatController
+                                                        .text,
                                                   ),
                                                 ),
                                               );
+
+                                              scannerProvider
+                                                  .clearDataTesScabies();
                                             }
                                           }
                                         }
@@ -301,6 +356,7 @@ Future<void> showCameraModal(BuildContext context) async {
                                           // Matikan Crop Image
                                           scannerProvider.cropImage();
 
+                                          Navigator.pop(context);
                                           Navigator.pop(context);
                                         }
                                       }

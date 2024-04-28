@@ -3,15 +3,34 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
+import 'package:mobileapp_scabies/core/constants/font_size.dart';
+import 'package:mobileapp_scabies/core/widgets/warning_widget.dart';
+import 'package:mobileapp_scabies/features/history/widgets/item_widget/survey_item.dart';
 
 class ScannerResultScreen extends StatelessWidget {
   final String scabiesResult;
   final File file;
+  final String namaLengkap;
+  final String jenisKelamin;
+  final String noHp;
+  final String alamat;
+  final String pertanyaanSatu;
+  final String pertanyaanDua;
+  final String pertanyaanTiga;
+  final String pertanyaanEmpat;
 
   const ScannerResultScreen({
     super.key,
     required this.scabiesResult,
     required this.file,
+    required this.namaLengkap,
+    required this.jenisKelamin,
+    required this.noHp,
+    required this.alamat,
+    required this.pertanyaanSatu,
+    required this.pertanyaanDua,
+    required this.pertanyaanTiga,
+    required this.pertanyaanEmpat,
   });
 
   @override
@@ -22,7 +41,13 @@ class ScannerResultScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Image.file(file),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.6,
+                  child: Image.file(
+                    file,
+                    fit: BoxFit.cover,
+                  ),
+                ),
                 Positioned(
                   left: 16,
                   top: 40,
@@ -124,6 +149,106 @@ class ScannerResultScreen extends StatelessWidget {
                   const SizedBox(
                     height: 16,
                   ),
+                  Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(14),
+                      color: AppColors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.07),
+                          spreadRadius: 0,
+                          blurRadius: 20,
+                          offset: const Offset(4, 4),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Data Diri Pasien :',
+                          style: TextStyle(
+                            fontSize: AppFontSize.bodySmall,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const CircleAvatar(
+                              radius: 40, // Adjust the size as needed
+                              backgroundImage: AssetImage(
+                                'assets/images/profile.jpg',
+                              ), // Replace with the actual image asset path
+                            ),
+                            const SizedBox(
+                              width: 24,
+                            ),
+                            Flexible(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    namaLengkap,
+                                    style: const TextStyle(
+                                      fontSize: AppFontSize.bodySmall,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 4,
+                                  ),
+                                  Text(
+                                    jenisKelamin,
+                                    style: const TextStyle(
+                                      fontSize: AppFontSize.caption,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 4,
+                                  ),
+                                  Text(
+                                    noHp,
+                                    style: const TextStyle(
+                                      fontSize: AppFontSize.caption,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        Text(
+                          alamat,
+                          style: const TextStyle(
+                            fontSize: AppFontSize.caption,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  SurveyItem(
+                    pertanyaanSatu: pertanyaanSatu,
+                    pertanyaanDua: pertanyaanDua,
+                    pertanyaanTiga: pertanyaanTiga,
+                    pertanyaanEmpat: pertanyaanEmpat,
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -214,6 +339,10 @@ class ScannerResultScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
+                  warningWidget(
+                    'Anda dapat menghubungi dokter menggunakan informasi yang disediakan di atas.',
+                  ),
+                  const SizedBox(height: 32),
                 ],
               ),
             )

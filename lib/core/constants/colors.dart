@@ -160,4 +160,5 @@ class AppColors {
   static const Color grayThirdColor = Color(0xffDDDADA);
   static const Color borderColor = Color(0xffF7F8F8);
   static const Color white = Color(0xffFFFFFF);
+  static const Color black = Color(0xff000000);
 }

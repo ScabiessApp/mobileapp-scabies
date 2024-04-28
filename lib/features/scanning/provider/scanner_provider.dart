@@ -11,9 +11,6 @@ import 'package:path/path.dart' as path;
 import 'package:provider/provider.dart';
 
 class ScannerProvider with ChangeNotifier {
-  // Form Key
-  final formKey = GlobalKey<FormState>();
-
   // Index untuk Halaman
   int currentIndex = 0;
 
@@ -33,6 +30,25 @@ class ScannerProvider with ChangeNotifier {
 
     return resizedFile;
   }
+
+  List<String> listJenisKelamin = [
+    'Laki-Laki',
+    'Perempuan',
+  ];
+  String? jenisKelamin;
+
+  final GlobalKey<FormState> tesScabiesFormKey = GlobalKey<FormState>();
+
+  final TextEditingController namaLengkapController = TextEditingController();
+  final TextEditingController noHpController = TextEditingController();
+  final TextEditingController alamatController = TextEditingController();
+  final TextEditingController pertanyaanSatuController =
+      TextEditingController();
+  final TextEditingController pertanyaanDuaController = TextEditingController();
+  final TextEditingController pertanyaanTigaController =
+      TextEditingController();
+  final TextEditingController pertanyaanEmpatController =
+      TextEditingController();
 
   // Set Status Crop Image done or not
   void cropImage() {
@@ -86,6 +102,14 @@ class ScannerProvider with ChangeNotifier {
       imageFile: fileUpload,
       description: description,
       dateTime: DateTime.now(),
+      nama: namaLengkapController.text,
+      jenisKelamin: jenisKelamin ?? '-',
+      alamat: alamatController.text,
+      noHp: noHpController.text,
+      pertanyaanSatu: pertanyaanSatuController.text,
+      pertanyaanDua: pertanyaanDuaController.text,
+      pertanyaanTiga: pertanyaanTigaController.text,
+      pertanyaanEmpat: pertanyaanEmpatController.text,
     );
 
     Provider.of<HistoryProvider>(context, listen: false)
@@ -113,5 +137,26 @@ class ScannerProvider with ChangeNotifier {
     } catch (e) {
       return e.toString();
     }
+  }
+
+  // Fungsi fungsi untuk validasi inputan
+  String? validatePertanyaan(String? value, BuildContext context) {
+    if (value == null || value.isEmpty) {
+      return 'Field tidak boleh kosong.';
+    }
+
+    return null; // validasi berhasil
+  }
+
+  // Eksekusi fungsi clear Data Bimbingan
+  void clearDataTesScabies() async {
+    jenisKelamin = null;
+    namaLengkapController.clear();
+    alamatController.clear();
+    noHpController.clear();
+    pertanyaanSatuController.clear();
+    pertanyaanDuaController.clear();
+    pertanyaanTigaController.clear();
+    pertanyaanEmpatController.clear();
   }
 }

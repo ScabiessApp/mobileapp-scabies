@@ -61,6 +61,19 @@ class OldHistoryWidget extends StatelessWidget {
                           id: 'Hasil Scan ${(index + 1)}',
                           scabiesResult:
                               historyProvider.historyList[index].description,
+                          namaLengkap: historyProvider.historyList[index].nama,
+                          jenisKelamin:
+                              historyProvider.historyList[index].jenisKelamin,
+                          noHp: historyProvider.historyList[index].noHp,
+                          alamat: historyProvider.historyList[index].alamat,
+                          pertanyaanSatu:
+                              historyProvider.historyList[index].pertanyaanSatu,
+                          pertanyaanDua:
+                              historyProvider.historyList[index].pertanyaanDua,
+                          pertanyaanTiga:
+                              historyProvider.historyList[index].pertanyaanTiga,
+                          pertanyaanEmpat: historyProvider
+                              .historyList[index].pertanyaanEmpat,
                         );
                       }
 

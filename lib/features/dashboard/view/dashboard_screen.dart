@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
 import 'package:mobileapp_scabies/features/dashboard/provider/dashboard_provider.dart';
-import 'package:mobileapp_scabies/features/scanning/widgets/camera_modal.dart';
+import 'package:mobileapp_scabies/features/scanning/view/report__screen.dart';
 import 'package:provider/provider.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -21,10 +21,29 @@ class DashboardScreen extends StatelessWidget {
                   shape: const CircleBorder(),
                   backgroundColor: AppColors.brandColor,
                   onPressed: () async {
-                    await showCameraModal(context);
+                    await Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            const ReportScreen(),
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
+                          const begin = Offset(0.0, 1.0);
+                          const end = Offset.zero;
+                          const curve = Curves.ease;
+                          var tween = Tween(begin: begin, end: end)
+                              .chain(CurveTween(curve: curve));
+                          var offsetAnimation = animation.drive(tween);
+                          return SlideTransition(
+                            position: offsetAnimation,
+                            child: child,
+                          );
+                        },
+                      ),
+                    );
                   },
                   child: const Icon(
-                    IconlyLight.camera,
+                    IconlyLight.search,
                     color: Colors.white,
                   ),
                 ),

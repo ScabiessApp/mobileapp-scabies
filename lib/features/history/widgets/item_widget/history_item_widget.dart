@@ -10,11 +10,27 @@ class HistoryItemWidget extends StatelessWidget {
   final File file;
   final String id;
   final String scabiesResult;
+  final String namaLengkap;
+  final String jenisKelamin;
+  final String noHp;
+  final String alamat;
+  final String pertanyaanSatu;
+  final String pertanyaanDua;
+  final String pertanyaanTiga;
+  final String pertanyaanEmpat;
   const HistoryItemWidget({
     super.key,
     required this.file,
     required this.id,
     required this.scabiesResult,
+    required this.namaLengkap,
+    required this.jenisKelamin,
+    required this.noHp,
+    required this.alamat,
+    required this.pertanyaanSatu,
+    required this.pertanyaanDua,
+    required this.pertanyaanTiga,
+    required this.pertanyaanEmpat,
   });
 
   @override
@@ -26,6 +42,14 @@ class HistoryItemWidget extends StatelessWidget {
             builder: (context) => HistoryDetailScreen(
               scabiesResult: scabiesResult,
               file: file,
+              namaLengkap: namaLengkap,
+              jenisKelamin: jenisKelamin,
+              noHp: noHp,
+              alamat: alamat,
+              pertanyaanSatu: pertanyaanSatu,
+              pertanyaanDua: pertanyaanDua,
+              pertanyaanTiga: pertanyaanTiga,
+              pertanyaanEmpat: pertanyaanEmpat,
             ),
           ),
         );

@@ -23,7 +23,7 @@ class HeadingWidget extends StatelessWidget {
                 ),
               ),
               Text(
-                'Alvira Dewi Septyan',
+                'User!',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w900,
@@ -36,12 +36,12 @@ class HeadingWidget extends StatelessWidget {
           width: 20,
         ),
         ClipRRect(
-          borderRadius: BorderRadius.circular(
-              30.0), // Half of the width/height for a perfect circle
+          borderRadius: BorderRadius.circular(30.0),
           child: Container(
             width: 60.0,
             height: 60.0,
-            color: AppColors.primary500, // Change the color as needed
+            color: AppColors.primary500,
+            child: Image.asset('assets/images/profile.jpg'),
           ),
         ),
       ],

@@ -22,14 +22,14 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Container(
-                      height: 64,
-                      width: 64,
-                      decoration: BoxDecoration(
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(32),
+                      child: Container(
+                        width: 64,
+                        height: 64,
                         color: AppColors.primary500,
-                        borderRadius: BorderRadius.circular(32),
+                        child: Image.asset('assets/images/profile.jpg'),
                       ),
-                      alignment: Alignment.center,
                     ),
                     const SizedBox(
                       width: 16,
@@ -39,7 +39,7 @@ class ProfileScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Alvira Dewi Septyan',
+                            'User',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 18,
@@ -47,7 +47,7 @@ class ProfileScreen extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            'alviradewiseptyan@gmail.com',
+                            'hellouserexample@gmail.com',
                             style: TextStyle(
                               fontWeight: FontWeight.normal,
                               fontSize: 14,
