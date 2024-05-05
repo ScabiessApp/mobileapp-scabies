@@ -426,7 +426,9 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionOne.join(', '),
+                  widget.sectionFourQuestionOne == []
+                      ? '-'
+                      : widget.sectionFourQuestionOne.join(', '),
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
@@ -446,7 +448,9 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionTwo.join(', '),
+                  widget.sectionFourQuestionTwo == []
+                      ? '-'
+                      : widget.sectionFourQuestionTwo.join(', '),
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
@@ -473,7 +477,9 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionThree.join(', '),
+                  widget.sectionFourQuestionThree == []
+                      ? '-'
+                      : widget.sectionFourQuestionThree.join(', '),
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
@@ -493,7 +499,9 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionFour.join(', '),
+                  widget.sectionFourQuestionFour == []
+                      ? '-'
+                      : widget.sectionFourQuestionFour.join(', '),
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
@@ -520,7 +528,9 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionFive.join(', '),
+                  widget.sectionFourQuestionFive == []
+                      ? '-'
+                      : widget.sectionFourQuestionFive.join(', '),
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
@@ -540,7 +550,9 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionSix.join(', '),
+                  widget.sectionFourQuestionSix == []
+                      ? '-'
+                      : widget.sectionFourQuestionSix.join(', '),
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
@@ -567,7 +579,9 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionSeven.join(', '),
+                  widget.sectionFourQuestionSeven == []
+                      ? '-'
+                      : widget.sectionFourQuestionSeven.join(', '),
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
@@ -587,7 +601,9 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionEight.join(', '),
+                  widget.sectionFourQuestionEight == []
+                      ? '-'
+                      : widget.sectionFourQuestionEight.join(', '),
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
@@ -614,7 +630,9 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionNine.join(', '),
+                  widget.sectionFourQuestionNine == []
+                      ? '-'
+                      : widget.sectionFourQuestionNine.join(', '),
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
@@ -641,7 +659,9 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionTen.join(', '),
+                  widget.sectionFourQuestionTen == []
+                      ? '-'
+                      : widget.sectionFourQuestionTen.join(', '),
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
@@ -668,7 +688,9 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionEleven.join(', '),
+                  widget.sectionFourQuestionEleven == []
+                      ? '-'
+                      : widget.sectionFourQuestionEleven.join(', '),
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
@@ -688,7 +710,9 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionTweleve.join(', '),
+                  widget.sectionFourQuestionTweleve == []
+                      ? '-'
+                      : widget.sectionFourQuestionTweleve.join(', '),
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
