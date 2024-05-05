@@ -426,7 +426,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionOne == []
+                  widget.sectionFourQuestionOne.isEmpty
                       ? '-'
                       : widget.sectionFourQuestionOne.join(', '),
                   style: const TextStyle(
@@ -448,7 +448,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionTwo == []
+                  widget.sectionFourQuestionTwo.isEmpty
                       ? '-'
                       : widget.sectionFourQuestionTwo.join(', '),
                   style: const TextStyle(
@@ -477,7 +477,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionThree == []
+                  widget.sectionFourQuestionThree.isEmpty
                       ? '-'
                       : widget.sectionFourQuestionThree.join(', '),
                   style: const TextStyle(
@@ -499,7 +499,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionFour == []
+                  widget.sectionFourQuestionFour.isEmpty
                       ? '-'
                       : widget.sectionFourQuestionFour.join(', '),
                   style: const TextStyle(
@@ -528,7 +528,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionFive == []
+                  widget.sectionFourQuestionFive.isEmpty
                       ? '-'
                       : widget.sectionFourQuestionFive.join(', '),
                   style: const TextStyle(
@@ -550,7 +550,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionSix == []
+                  widget.sectionFourQuestionSix.isEmpty
                       ? '-'
                       : widget.sectionFourQuestionSix.join(', '),
                   style: const TextStyle(
@@ -579,7 +579,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionSeven == []
+                  widget.sectionFourQuestionSeven.isEmpty
                       ? '-'
                       : widget.sectionFourQuestionSeven.join(', '),
                   style: const TextStyle(
@@ -601,7 +601,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionEight == []
+                  widget.sectionFourQuestionEight.isEmpty
                       ? '-'
                       : widget.sectionFourQuestionEight.join(', '),
                   style: const TextStyle(
@@ -630,7 +630,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionNine == []
+                  widget.sectionFourQuestionNine.isEmpty
                       ? '-'
                       : widget.sectionFourQuestionNine.join(', '),
                   style: const TextStyle(
@@ -659,7 +659,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionTen == []
+                  widget.sectionFourQuestionTen.isEmpty
                       ? '-'
                       : widget.sectionFourQuestionTen.join(', '),
                   style: const TextStyle(
@@ -688,7 +688,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionEleven == []
+                  widget.sectionFourQuestionEleven.isEmpty
                       ? '-'
                       : widget.sectionFourQuestionEleven.join(', '),
                   style: const TextStyle(
@@ -710,7 +710,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.sectionFourQuestionTweleve == []
+                  widget.sectionFourQuestionTweleve.isEmpty
                       ? '-'
                       : widget.sectionFourQuestionTweleve.join(', '),
                   style: const TextStyle(
