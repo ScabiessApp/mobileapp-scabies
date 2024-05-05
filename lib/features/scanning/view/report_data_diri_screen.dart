@@ -1,21 +1,29 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
 import 'package:mobileapp_scabies/core/constants/font_size.dart';
 import 'package:mobileapp_scabies/core/widgets/custom_text_form_field.dart';
 import 'package:mobileapp_scabies/core/widgets/warning_widget.dart';
 import 'package:mobileapp_scabies/features/scanning/provider/scanner_provider.dart';
-import 'package:mobileapp_scabies/features/scanning/widgets/camera_modal.dart';
+import 'package:mobileapp_scabies/features/scanning/view/report_section_one_screen.dart';
 import 'package:provider/provider.dart';
 
-class ReportScreen extends StatefulWidget {
-  const ReportScreen({super.key});
+class ReportDataDiriScreen extends StatefulWidget {
+  const ReportDataDiriScreen({super.key});
 
   @override
-  State<ReportScreen> createState() => _ReportScreenState();
+  State<ReportDataDiriScreen> createState() => _ReportDataDiriScreenState();
 }
 
-class _ReportScreenState extends State<ReportScreen> {
+class _ReportDataDiriScreenState extends State<ReportDataDiriScreen> {
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<ScannerProvider>().clearDataTesScabies();
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +38,6 @@ class _ReportScreenState extends State<ReportScreen> {
         ),
         leading: IconButton(
           onPressed: () {
-            Provider.of<ScannerProvider>(context, listen: false)
-                .clearDataTesScabies();
             Navigator.pop(context);
           },
           icon: const Icon(
@@ -39,13 +45,25 @@ class _ReportScreenState extends State<ReportScreen> {
             color: AppColors.white,
           ),
         ),
+        actions: const [
+          Text(
+            '1/5',
+            style: TextStyle(
+              color: AppColors.white,
+              fontSize: AppFontSize.bodyLarge,
+            ),
+          ),
+          SizedBox(
+            width: 16,
+          ),
+        ],
         backgroundColor: AppColors.brandColor,
         shadowColor: AppColors.black.withOpacity(0.2),
       ),
       body: Consumer<ScannerProvider>(
         builder: (context, scannerProvider, _) {
           return Form(
-            key: scannerProvider.tesScabiesFormKey,
+            key: scannerProvider.dataDiriFormKey,
             child: ListView(
               padding: const EdgeInsets.all(16),
               children: [
@@ -183,101 +201,17 @@ class _ReportScreenState extends State<ReportScreen> {
                   hint: "Tambahkan alamat lengkap anda",
                 ),
                 const SizedBox(
-                  height: 32,
-                ),
-                const Text(
-                  'Tes Scabies',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: AppFontSize.bodyMedium,
-                  ),
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                const Divider(
-                  color: AppColors.neutral100,
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                const Text(
-                  'Pertanyaan 1',
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                CustomTextFormField(
-                  textInputAction: TextInputAction.next,
-                  validator: (value) =>
-                      scannerProvider.validatePertanyaan(value, context),
-                  controller: scannerProvider.pertanyaanSatuController,
-                  enable: true,
-                  maxLines: 1,
-                  hint: "Hint Pertanyaan",
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                const Text(
-                  'Pertanyaan 2',
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                CustomTextFormField(
-                  textInputAction: TextInputAction.next,
-                  validator: (value) =>
-                      scannerProvider.validatePertanyaan(value, context),
-                  controller: scannerProvider.pertanyaanDuaController,
-                  enable: true,
-                  maxLines: 1,
-                  hint: "Hint Pertanyaan",
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                const Text(
-                  'Pertanyaan 3',
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                CustomTextFormField(
-                  textInputAction: TextInputAction.next,
-                  validator: (value) =>
-                      scannerProvider.validatePertanyaan(value, context),
-                  controller: scannerProvider.pertanyaanTigaController,
-                  enable: true,
-                  maxLines: 1,
-                  hint: "Hint Pertanyaan",
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                const Text(
-                  'Pertanyaan 4',
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                CustomTextFormField(
-                  textInputAction: TextInputAction.done,
-                  validator: (value) =>
-                      scannerProvider.validatePertanyaan(value, context),
-                  controller: scannerProvider.pertanyaanEmpatController,
-                  enable: true,
-                  maxLines: 1,
-                  hint: "Hint Pertanyaan",
-                ),
-                const SizedBox(
                   height: 16,
                 ),
                 ElevatedButton(
                   onPressed: () async {
-                    if (scannerProvider.tesScabiesFormKey.currentState!
+                    if (scannerProvider.dataDiriFormKey.currentState!
                         .validate()) {
-                      showCameraModal(context);
+                      Navigator.of(context).push(
+                        CupertinoPageRoute(
+                          builder: (context) => const ReportSectionOneScreen(),
+                        ),
+                      );
                     }
                   },
                   style: ButtonStyle(
@@ -290,28 +224,13 @@ class _ReportScreenState extends State<ReportScreen> {
                       AppColors.brandColor,
                     ),
                   ),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        IconlyLight.camera,
-                        size: 24,
-                        color: AppColors.white,
-                      ),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Flexible(
-                        child: Text(
-                          'Mulai Scan Kulit',
-                          style: TextStyle(
-                            fontSize: AppFontSize.bodyMedium,
-                            fontWeight: FontWeight.normal,
-                            color: AppColors.white,
-                          ),
-                        ),
-                      ),
-                    ],
+                  child: const Text(
+                    'Lanjut',
+                    style: TextStyle(
+                      fontSize: AppFontSize.bodyMedium,
+                      fontWeight: FontWeight.normal,
+                      color: AppColors.white,
+                    ),
                   ),
                 ),
               ],

@@ -37,11 +37,16 @@ class ScannerProvider with ChangeNotifier {
   ];
   String? jenisKelamin;
 
-  final GlobalKey<FormState> tesScabiesFormKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> dataDiriFormKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> sectionOneTestFormKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> sectionTwoTestFormKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> sectionThreeTestFormKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> sectionFourTestFormKey = GlobalKey<FormState>();
 
   final TextEditingController namaLengkapController = TextEditingController();
   final TextEditingController noHpController = TextEditingController();
   final TextEditingController alamatController = TextEditingController();
+
   final TextEditingController pertanyaanSatuController =
       TextEditingController();
   final TextEditingController pertanyaanDuaController = TextEditingController();
@@ -49,6 +54,38 @@ class ScannerProvider with ChangeNotifier {
       TextEditingController();
   final TextEditingController pertanyaanEmpatController =
       TextEditingController();
+
+  // Jawaban dari survey test section 1
+  String sectionOneQuestionOne = '';
+  String sectionOneQuestionTwo = '';
+  String sectionOneQuestionThree = '';
+  String sectionOneQuestionFour = '';
+  String sectionOneQuestionFive = '';
+  String sectionOneQuestionSix = '';
+  String sectionOneQuestionSeven = '';
+
+  // Jawaban dari survey test section 2
+  String sectionTwoQuestionOne = '';
+  String sectionTwoQuestionTwo = '';
+
+  // Jawaban dari survey test section 3
+  String sectionThreeQuestionOne = '';
+  String sectionThreeQuestionTwo = '';
+  String sectionThreeQuestionThree = '';
+
+  // Jawaban dari survey test section 4
+  List<String> sectionFourQuestionOne = [];
+  List<String> sectionFourQuestionTwo = [];
+  List<String> sectionFourQuestionThree = [];
+  List<String> sectionFourQuestionFour = [];
+  List<String> sectionFourQuestionFive = [];
+  List<String> sectionFourQuestionSix = [];
+  List<String> sectionFourQuestionSeven = [];
+  List<String> sectionFourQuestionEight = [];
+  List<String> sectionFourQuestionNine = [];
+  List<String> sectionFourQuestionTen = [];
+  List<String> sectionFourQuestionEleven = [];
+  List<String> sectionFourQuestionTweleve = [];
 
   // Set Status Crop Image done or not
   void cropImage() {
@@ -106,10 +143,30 @@ class ScannerProvider with ChangeNotifier {
       jenisKelamin: jenisKelamin ?? '-',
       alamat: alamatController.text,
       noHp: noHpController.text,
-      pertanyaanSatu: pertanyaanSatuController.text,
-      pertanyaanDua: pertanyaanDuaController.text,
-      pertanyaanTiga: pertanyaanTigaController.text,
-      pertanyaanEmpat: pertanyaanEmpatController.text,
+      sectionOneQuestionOne: sectionOneQuestionOne,
+      sectionOneQuestionTwo: sectionOneQuestionTwo,
+      sectionOneQuestionThree: sectionOneQuestionThree,
+      sectionOneQuestionFour: sectionOneQuestionFour,
+      sectionOneQuestionFive: sectionOneQuestionFive,
+      sectionOneQuestionSix: sectionOneQuestionSix,
+      sectionOneQuestionSeven: sectionOneQuestionSeven,
+      sectionTwoQuestionOne: sectionTwoQuestionOne,
+      sectionTwoQuestionTwo: sectionTwoQuestionTwo,
+      sectionThreeQuestionOne: sectionThreeQuestionOne,
+      sectionThreeQuestionTwo: sectionThreeQuestionTwo,
+      sectionThreeQuestionThree: sectionThreeQuestionThree,
+      sectionFourQuestionOne: sectionFourQuestionOne,
+      sectionFourQuestionTwo: sectionFourQuestionTwo,
+      sectionFourQuestionThree: sectionFourQuestionThree,
+      sectionFourQuestionFour: sectionFourQuestionFour,
+      sectionFourQuestionFive: sectionFourQuestionFive,
+      sectionFourQuestionSix: sectionFourQuestionSix,
+      sectionFourQuestionSeven: sectionFourQuestionSeven,
+      sectionFourQuestionEight: sectionFourQuestionEight,
+      sectionFourQuestionNine: sectionFourQuestionNine,
+      sectionFourQuestionTen: sectionFourQuestionTen,
+      sectionFourQuestionEleven: sectionFourQuestionEleven,
+      sectionFourQuestionTweleve: sectionFourQuestionTweleve,
     );
 
     Provider.of<HistoryProvider>(context, listen: false)
@@ -154,9 +211,145 @@ class ScannerProvider with ChangeNotifier {
     namaLengkapController.clear();
     alamatController.clear();
     noHpController.clear();
-    pertanyaanSatuController.clear();
-    pertanyaanDuaController.clear();
-    pertanyaanTigaController.clear();
-    pertanyaanEmpatController.clear();
+    sectionOneQuestionOne = '';
+    sectionOneQuestionTwo = '';
+    sectionOneQuestionThree = '';
+    sectionOneQuestionFour = '';
+    sectionOneQuestionFive = '';
+    sectionOneQuestionSix = '';
+    sectionOneQuestionSeven = '';
+    sectionTwoQuestionOne = '';
+    sectionTwoQuestionTwo = '';
+    sectionThreeQuestionOne = '';
+    sectionThreeQuestionTwo = '';
+    sectionThreeQuestionThree = '';
+  }
+
+  void setAnswer(
+    String section,
+    String number,
+    String answer,
+  ) {
+    section == 'Section One'
+        ? number == 'One'
+            ? sectionOneQuestionOne = answer
+            : number == 'Two'
+                ? sectionOneQuestionTwo = answer
+                : number == 'Three'
+                    ? sectionOneQuestionThree = answer
+                    : number == 'Four'
+                        ? sectionOneQuestionFour = answer
+                        : number == 'Five'
+                            ? sectionOneQuestionFive = answer
+                            : number == 'Six'
+                                ? sectionOneQuestionSix = answer
+                                : sectionOneQuestionSeven = answer
+        : section == 'Section Two'
+            ? number == 'One'
+                ? sectionTwoQuestionOne = answer
+                : sectionTwoQuestionTwo = answer
+            : section == 'Section Three'
+                ? number == 'One'
+                    ? sectionThreeQuestionOne = answer
+                    : number == 'Two'
+                        ? sectionThreeQuestionTwo = answer
+                        : sectionThreeQuestionThree = answer
+                : null;
+
+    notifyListeners();
+  }
+
+  bool validateSectionOne(BuildContext context) {
+    if (sectionOneQuestionOne != '' &&
+        sectionOneQuestionTwo != '' &&
+        sectionOneQuestionThree != '' &&
+        sectionOneQuestionFour != '' &&
+        sectionOneQuestionFive != '' &&
+        sectionOneQuestionSix != '' &&
+        sectionOneQuestionSeven != '') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  bool validateSectionTwo(BuildContext context) {
+    if (sectionTwoQuestionOne != '' && sectionTwoQuestionTwo != '') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  bool validateSectionThree(BuildContext context) {
+    if (sectionThreeQuestionOne != '' &&
+        sectionThreeQuestionTwo != '' &&
+        sectionThreeQuestionThree != '') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  void addCheckBoxItem(String value, String number) {
+    number == 'One'
+        ? sectionFourQuestionOne.contains(value)
+            ? sectionFourQuestionOne.remove(value)
+            : sectionFourQuestionOne.add(value)
+        : number == 'Two'
+            ? sectionFourQuestionTwo.contains(value)
+                ? sectionFourQuestionTwo.remove(value)
+                : sectionFourQuestionTwo.add(value)
+            : number == 'Three'
+                ? sectionFourQuestionThree.contains(value)
+                    ? sectionFourQuestionThree.remove(value)
+                    : sectionFourQuestionThree.add(value)
+                : number == 'Four'
+                    ? sectionFourQuestionFour.contains(value)
+                        ? sectionFourQuestionFour.remove(value)
+                        : sectionFourQuestionFour.add(value)
+                    : number == 'Five'
+                        ? sectionFourQuestionFive.contains(value)
+                            ? sectionFourQuestionFive.remove(value)
+                            : sectionFourQuestionFive.add(value)
+                        : number == 'Six'
+                            ? sectionFourQuestionSix.contains(value)
+                                ? sectionFourQuestionSix.remove(value)
+                                : sectionFourQuestionSix.add(value)
+                            : number == 'Seven'
+                                ? sectionFourQuestionSeven.contains(value)
+                                    ? sectionFourQuestionSeven.remove(value)
+                                    : sectionFourQuestionSeven.add(value)
+                                : number == 'Eight'
+                                    ? sectionFourQuestionEight.contains(value)
+                                        ? sectionFourQuestionEight.remove(value)
+                                        : sectionFourQuestionEight.add(value)
+                                    : number == 'Nine'
+                                        ? sectionFourQuestionNine
+                                                .contains(value)
+                                            ? sectionFourQuestionNine
+                                                .remove(value)
+                                            : sectionFourQuestionNine.add(value)
+                                        : number == 'Ten'
+                                            ? sectionFourQuestionTen
+                                                    .contains(value)
+                                                ? sectionFourQuestionTen
+                                                    .remove(value)
+                                                : sectionFourQuestionTen
+                                                    .add(value)
+                                            : number == 'Eleven'
+                                                ? sectionFourQuestionEleven
+                                                        .contains(value)
+                                                    ? sectionFourQuestionEleven
+                                                        .remove(value)
+                                                    : sectionFourQuestionEleven
+                                                        .add(value)
+                                                : sectionFourQuestionTweleve
+                                                        .contains(value)
+                                                    ? sectionFourQuestionTweleve
+                                                        .remove(value)
+                                                    : sectionFourQuestionTweleve
+                                                        .add(value);
+    notifyListeners();
   }
 }

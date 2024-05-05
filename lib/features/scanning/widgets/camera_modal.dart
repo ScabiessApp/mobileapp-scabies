@@ -52,7 +52,7 @@ Future<void> showCameraModal(BuildContext context) async {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               const Text(
-                                'Mulai Deteksi',
+                                'Pilih Sumber Foto',
                                 style: TextStyle(
                                   fontSize: AppFontSize.bodyMedium,
                                   fontWeight: AppFontWeight.bodySemiBold,
@@ -137,6 +137,11 @@ Future<void> showCameraModal(BuildContext context) async {
                                               Navigator.pop(context);
                                               Navigator.pop(context);
 
+                                              Navigator.pop(context);
+                                              Navigator.pop(context);
+                                              Navigator.pop(context);
+                                              Navigator.pop(context);
+
                                               // Matikan Crop Image
                                               scannerProvider.cropImage();
 
@@ -147,35 +152,52 @@ Future<void> showCameraModal(BuildContext context) async {
 
                                               await Navigator.of(context).push(
                                                 CupertinoPageRoute(
-                                                  builder: (context) =>
-                                                      ScannerResultScreen(
-                                                    scabiesResult:
-                                                        scabiesResult,
-                                                    file: fileUpload,
-                                                    namaLengkap: scannerProvider
-                                                        .namaLengkapController
-                                                        .text,
-                                                    jenisKelamin:
-                                                        scannerProvider
-                                                                .jenisKelamin ??
-                                                            '-',
-                                                    noHp: scannerProvider
-                                                        .noHpController.text,
-                                                    alamat: scannerProvider
-                                                        .alamatController.text,
-                                                    pertanyaanSatu: scannerProvider
-                                                        .pertanyaanSatuController
-                                                        .text,
-                                                    pertanyaanDua: scannerProvider
-                                                        .pertanyaanDuaController
-                                                        .text,
-                                                    pertanyaanTiga: scannerProvider
-                                                        .pertanyaanTigaController
-                                                        .text,
-                                                    pertanyaanEmpat: scannerProvider
-                                                        .pertanyaanEmpatController
-                                                        .text,
-                                                  ),
+                                                  builder: (context) => ScannerResultScreen(
+                                                      scabiesResult:
+                                                          scabiesResult,
+                                                      file: fileUpload,
+                                                      namaLengkap: scannerProvider
+                                                          .namaLengkapController
+                                                          .text,
+                                                      jenisKelamin:
+                                                          scannerProvider.jenisKelamin ??
+                                                              '-',
+                                                      noHp: scannerProvider
+                                                          .noHpController.text,
+                                                      alamat: scannerProvider
+                                                          .alamatController
+                                                          .text,
+                                                      sectionOneQuestionOne:
+                                                          scannerProvider
+                                                              .sectionOneQuestionOne,
+                                                      sectionOneQuestionTwo:
+                                                          scannerProvider
+                                                              .sectionOneQuestionTwo,
+                                                      sectionOneQuestionThree:
+                                                          scannerProvider
+                                                              .sectionOneQuestionThree,
+                                                      sectionOneQuestionFour:
+                                                          scannerProvider.sectionOneQuestionFour,
+                                                      sectionOneQuestionFive: scannerProvider.sectionOneQuestionFive,
+                                                      sectionOneQuestionSix: scannerProvider.sectionOneQuestionSix,
+                                                      sectionOneQuestionSeven: scannerProvider.sectionOneQuestionSeven,
+                                                      sectionTwoQuestionOne: scannerProvider.sectionTwoQuestionOne,
+                                                      sectionTwoQuestionTwo: scannerProvider.sectionTwoQuestionTwo,
+                                                      sectionThreeQuestionOne: scannerProvider.sectionThreeQuestionOne,
+                                                      sectionThreeQuestionTwo: scannerProvider.sectionThreeQuestionTwo,
+                                                      sectionThreeQuestionThree: scannerProvider.sectionThreeQuestionThree,
+                                                      sectionFourQuestionOne: scannerProvider.sectionFourQuestionOne,
+                                                      sectionFourQuestionTwo: scannerProvider.sectionFourQuestionTwo,
+                                                      sectionFourQuestionThree: scannerProvider.sectionFourQuestionThree,
+                                                      sectionFourQuestionFour: scannerProvider.sectionFourQuestionFour,
+                                                      sectionFourQuestionFive: scannerProvider.sectionFourQuestionFive,
+                                                      sectionFourQuestionSix: scannerProvider.sectionFourQuestionSix,
+                                                      sectionFourQuestionSeven: scannerProvider.sectionFourQuestionSeven,
+                                                      sectionFourQuestionEight: scannerProvider.sectionFourQuestionEight,
+                                                      sectionFourQuestionNine: scannerProvider.sectionFourQuestionNine,
+                                                      sectionFourQuestionTen: scannerProvider.sectionFourQuestionTen,
+                                                      sectionFourQuestionEleven: scannerProvider.sectionFourQuestionEleven,
+                                                      sectionFourQuestionTweleve: scannerProvider.sectionFourQuestionTweleve),
                                                 ),
                                               );
 
@@ -189,7 +211,6 @@ Future<void> showCameraModal(BuildContext context) async {
                                           // Matikan Crop Image
                                           scannerProvider.cropImage();
 
-                                          Navigator.pop(context);
                                           Navigator.pop(context);
                                         }
                                       }
@@ -304,6 +325,11 @@ Future<void> showCameraModal(BuildContext context) async {
                                               Navigator.pop(context);
                                               Navigator.pop(context);
 
+                                              Navigator.pop(context);
+                                              Navigator.pop(context);
+                                              Navigator.pop(context);
+                                              Navigator.pop(context);
+
                                               // Matikan Crop Image
                                               scannerProvider.cropImage();
 
@@ -330,18 +356,78 @@ Future<void> showCameraModal(BuildContext context) async {
                                                         .noHpController.text,
                                                     alamat: scannerProvider
                                                         .alamatController.text,
-                                                    pertanyaanSatu: scannerProvider
-                                                        .pertanyaanSatuController
-                                                        .text,
-                                                    pertanyaanDua: scannerProvider
-                                                        .pertanyaanDuaController
-                                                        .text,
-                                                    pertanyaanTiga: scannerProvider
-                                                        .pertanyaanTigaController
-                                                        .text,
-                                                    pertanyaanEmpat: scannerProvider
-                                                        .pertanyaanEmpatController
-                                                        .text,
+                                                    sectionOneQuestionOne:
+                                                        scannerProvider
+                                                            .sectionOneQuestionOne,
+                                                    sectionOneQuestionTwo:
+                                                        scannerProvider
+                                                            .sectionOneQuestionTwo,
+                                                    sectionOneQuestionThree:
+                                                        scannerProvider
+                                                            .sectionOneQuestionThree,
+                                                    sectionOneQuestionFour:
+                                                        scannerProvider
+                                                            .sectionOneQuestionFour,
+                                                    sectionOneQuestionFive:
+                                                        scannerProvider
+                                                            .sectionOneQuestionFive,
+                                                    sectionOneQuestionSix:
+                                                        scannerProvider
+                                                            .sectionOneQuestionSix,
+                                                    sectionOneQuestionSeven:
+                                                        scannerProvider
+                                                            .sectionOneQuestionSeven,
+                                                    sectionTwoQuestionOne:
+                                                        scannerProvider
+                                                            .sectionTwoQuestionOne,
+                                                    sectionTwoQuestionTwo:
+                                                        scannerProvider
+                                                            .sectionTwoQuestionTwo,
+                                                    sectionThreeQuestionOne:
+                                                        scannerProvider
+                                                            .sectionThreeQuestionOne,
+                                                    sectionThreeQuestionTwo:
+                                                        scannerProvider
+                                                            .sectionThreeQuestionTwo,
+                                                    sectionThreeQuestionThree:
+                                                        scannerProvider
+                                                            .sectionThreeQuestionThree,
+                                                    sectionFourQuestionOne:
+                                                        scannerProvider
+                                                            .sectionFourQuestionOne,
+                                                    sectionFourQuestionTwo:
+                                                        scannerProvider
+                                                            .sectionFourQuestionTwo,
+                                                    sectionFourQuestionThree:
+                                                        scannerProvider
+                                                            .sectionFourQuestionThree,
+                                                    sectionFourQuestionFour:
+                                                        scannerProvider
+                                                            .sectionFourQuestionFour,
+                                                    sectionFourQuestionFive:
+                                                        scannerProvider
+                                                            .sectionFourQuestionFive,
+                                                    sectionFourQuestionSix:
+                                                        scannerProvider
+                                                            .sectionFourQuestionSix,
+                                                    sectionFourQuestionSeven:
+                                                        scannerProvider
+                                                            .sectionFourQuestionSeven,
+                                                    sectionFourQuestionEight:
+                                                        scannerProvider
+                                                            .sectionFourQuestionEight,
+                                                    sectionFourQuestionNine:
+                                                        scannerProvider
+                                                            .sectionFourQuestionNine,
+                                                    sectionFourQuestionTen:
+                                                        scannerProvider
+                                                            .sectionFourQuestionTen,
+                                                    sectionFourQuestionEleven:
+                                                        scannerProvider
+                                                            .sectionFourQuestionEleven,
+                                                    sectionFourQuestionTweleve:
+                                                        scannerProvider
+                                                            .sectionFourQuestionTweleve,
                                                   ),
                                                 ),
                                               );
@@ -356,7 +442,6 @@ Future<void> showCameraModal(BuildContext context) async {
                                           // Matikan Crop Image
                                           scannerProvider.cropImage();
 
-                                          Navigator.pop(context);
                                           Navigator.pop(context);
                                         }
                                       }

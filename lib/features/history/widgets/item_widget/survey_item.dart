@@ -3,16 +3,63 @@ import 'package:mobileapp_scabies/core/constants/colors.dart';
 import 'package:mobileapp_scabies/core/constants/font_size.dart';
 
 class SurveyItem extends StatefulWidget {
-  final String pertanyaanSatu;
-  final String pertanyaanDua;
-  final String pertanyaanTiga;
-  final String pertanyaanEmpat;
+  // Section 1
+  final String sectionOneQuestionOne;
+  final String sectionOneQuestionTwo;
+  final String sectionOneQuestionThree;
+  final String sectionOneQuestionFour;
+  final String sectionOneQuestionFive;
+  final String sectionOneQuestionSix;
+  final String sectionOneQuestionSeven;
+
+  // Section 2
+  final String sectionTwoQuestionOne;
+  final String sectionTwoQuestionTwo;
+
+  // Section 3
+  final String sectionThreeQuestionOne;
+  final String sectionThreeQuestionTwo;
+  final String sectionThreeQuestionThree;
+
+  // Section 4
+  final List<String> sectionFourQuestionOne;
+  final List<String> sectionFourQuestionTwo;
+  final List<String> sectionFourQuestionThree;
+  final List<String> sectionFourQuestionFour;
+  final List<String> sectionFourQuestionFive;
+  final List<String> sectionFourQuestionSix;
+  final List<String> sectionFourQuestionSeven;
+  final List<String> sectionFourQuestionEight;
+  final List<String> sectionFourQuestionNine;
+  final List<String> sectionFourQuestionTen;
+  final List<String> sectionFourQuestionEleven;
+  final List<String> sectionFourQuestionTweleve;
   const SurveyItem({
     super.key,
-    required this.pertanyaanSatu,
-    required this.pertanyaanDua,
-    required this.pertanyaanTiga,
-    required this.pertanyaanEmpat,
+    required this.sectionOneQuestionOne,
+    required this.sectionOneQuestionTwo,
+    required this.sectionOneQuestionThree,
+    required this.sectionOneQuestionFour,
+    required this.sectionOneQuestionFive,
+    required this.sectionOneQuestionSix,
+    required this.sectionOneQuestionSeven,
+    required this.sectionTwoQuestionOne,
+    required this.sectionTwoQuestionTwo,
+    required this.sectionThreeQuestionOne,
+    required this.sectionThreeQuestionTwo,
+    required this.sectionThreeQuestionThree,
+    required this.sectionFourQuestionOne,
+    required this.sectionFourQuestionTwo,
+    required this.sectionFourQuestionThree,
+    required this.sectionFourQuestionFour,
+    required this.sectionFourQuestionFive,
+    required this.sectionFourQuestionSix,
+    required this.sectionFourQuestionSeven,
+    required this.sectionFourQuestionEight,
+    required this.sectionFourQuestionNine,
+    required this.sectionFourQuestionTen,
+    required this.sectionFourQuestionEleven,
+    required this.sectionFourQuestionTweleve,
   });
 
   @override
@@ -63,8 +110,19 @@ class _SurveyItemState extends State<SurveyItem> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Section 1
                 const Text(
-                  'Pertanyaan 1',
+                  'Gatal Malam Hari',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.bodySmall,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text(
+                  'Sela di jari tangan',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: AppFontSize.caption,
@@ -74,7 +132,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.pertanyaanSatu,
+                  widget.sectionOneQuestionOne,
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
@@ -84,7 +142,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 16,
                 ),
                 const Text(
-                  'Pertanyaan 2',
+                  'Pergelangan tangan depan',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: AppFontSize.caption,
@@ -94,7 +152,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.pertanyaanDua,
+                  widget.sectionOneQuestionTwo,
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
@@ -104,7 +162,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 16,
                 ),
                 const Text(
-                  'Pertanyaan 3',
+                  'Siku luar',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: AppFontSize.caption,
@@ -114,7 +172,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.pertanyaanTiga,
+                  widget.sectionOneQuestionThree,
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,
@@ -124,7 +182,7 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 16,
                 ),
                 const Text(
-                  'Pertanyaan 4',
+                  'Lipat ketiak depan',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: AppFontSize.caption,
@@ -134,7 +192,503 @@ class _SurveyItemState extends State<SurveyItem> {
                   height: 8,
                 ),
                 Text(
-                  widget.pertanyaanEmpat,
+                  widget.sectionOneQuestionFour,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text(
+                  'Pusar',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionOneQuestionFive,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text(
+                  'Area Bokong',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionOneQuestionSix,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text(
+                  'Area Puting',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionOneQuestionSeven,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const Divider(
+                  color: AppColors.neutral500,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+
+                // Section 2
+                const Text(
+                  'Keluhan Gatal Pada Orang Lain',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.bodySmall,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text(
+                  'Sekamar / Serumah / Seasrama',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionTwoQuestionOne,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text(
+                  'Kerabat dekat lain',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionTwoQuestionTwo,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const Divider(
+                  color: AppColors.neutral500,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+
+                // Section 3
+                const Text(
+                  'Riwayat penyakit serupa sebelumnya',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.bodySmall,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text(
+                  'Keluhan gatal',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionThreeQuestionOne,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text(
+                  'Kelainan Kulit',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionThreeQuestionTwo,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text(
+                  'Riwayat pengobatan sebelumnya',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionThreeQuestionThree,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const Divider(
+                  color: AppColors.neutral500,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+
+                // Section 4
+                const Text(
+                  'Pemeriksaan Fisik',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.bodySmall,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text(
+                  'Sela Jari',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionFourQuestionOne.join(', '),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const Text(
+                  'Jenis Lesi/Kelainan',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionFourQuestionTwo.join(', '),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const Divider(
+                  color: AppColors.neutral100,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+
+                const Text(
+                  'Pergelangan tangan depan',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionFourQuestionThree.join(', '),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const Text(
+                  'Jenis Lesi/Kelainan',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionFourQuestionFour.join(', '),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const Divider(
+                  color: AppColors.neutral100,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+
+                const Text(
+                  'Siku Luar',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionFourQuestionFive.join(', '),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const Text(
+                  'Jenis Lesi/Kelainan',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionFourQuestionSix.join(', '),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const Divider(
+                  color: AppColors.neutral100,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+
+                const Text(
+                  'Lipat ketiak depan',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionFourQuestionSeven.join(', '),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const Text(
+                  'Jenis Lesi/Kelainan',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionFourQuestionEight.join(', '),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const Divider(
+                  color: AppColors.neutral100,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+
+                const Text(
+                  'Pusar',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionFourQuestionNine.join(', '),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const Divider(
+                  color: AppColors.neutral100,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+
+                const Text(
+                  'Area Bokong',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionFourQuestionTen.join(', '),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const Divider(
+                  color: AppColors.neutral100,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+
+                const Text(
+                  'Area Puting',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionFourQuestionEleven.join(', '),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const Text(
+                  'Jenis Lesi/Kelainan',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.caption,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.sectionFourQuestionTweleve.join(', '),
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: AppFontSize.caption,

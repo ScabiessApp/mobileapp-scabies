@@ -66,14 +66,54 @@ class OldHistoryWidget extends StatelessWidget {
                               historyProvider.historyList[index].jenisKelamin,
                           noHp: historyProvider.historyList[index].noHp,
                           alamat: historyProvider.historyList[index].alamat,
-                          pertanyaanSatu:
-                              historyProvider.historyList[index].pertanyaanSatu,
-                          pertanyaanDua:
-                              historyProvider.historyList[index].pertanyaanDua,
-                          pertanyaanTiga:
-                              historyProvider.historyList[index].pertanyaanTiga,
-                          pertanyaanEmpat: historyProvider
-                              .historyList[index].pertanyaanEmpat,
+                          sectionOneQuestionOne: historyProvider
+                              .historyList[index].sectionOneQuestionOne,
+                          sectionOneQuestionTwo: historyProvider
+                              .historyList[index].sectionOneQuestionTwo,
+                          sectionOneQuestionThree: historyProvider
+                              .historyList[index].sectionOneQuestionThree,
+                          sectionOneQuestionFour: historyProvider
+                              .historyList[index].sectionOneQuestionFour,
+                          sectionOneQuestionFive: historyProvider
+                              .historyList[index].sectionOneQuestionFive,
+                          sectionOneQuestionSix: historyProvider
+                              .historyList[index].sectionOneQuestionSix,
+                          sectionOneQuestionSeven: historyProvider
+                              .historyList[index].sectionOneQuestionSeven,
+                          sectionTwoQuestionOne: historyProvider
+                              .historyList[index].sectionTwoQuestionOne,
+                          sectionTwoQuestionTwo: historyProvider
+                              .historyList[index].sectionTwoQuestionTwo,
+                          sectionThreeQuestionOne: historyProvider
+                              .historyList[index].sectionThreeQuestionOne,
+                          sectionThreeQuestionTwo: historyProvider
+                              .historyList[index].sectionThreeQuestionTwo,
+                          sectionThreeQuestionThree: historyProvider
+                              .historyList[index].sectionThreeQuestionThree,
+                          sectionFourQuestionOne: historyProvider
+                              .historyList[index].sectionFourQuestionOne,
+                          sectionFourQuestionTwo: historyProvider
+                              .historyList[index].sectionFourQuestionTwo,
+                          sectionFourQuestionThree: historyProvider
+                              .historyList[index].sectionFourQuestionThree,
+                          sectionFourQuestionFour: historyProvider
+                              .historyList[index].sectionFourQuestionFour,
+                          sectionFourQuestionFive: historyProvider
+                              .historyList[index].sectionFourQuestionFive,
+                          sectionFourQuestionSix: historyProvider
+                              .historyList[index].sectionFourQuestionSix,
+                          sectionFourQuestionSeven: historyProvider
+                              .historyList[index].sectionFourQuestionSeven,
+                          sectionFourQuestionEight: historyProvider
+                              .historyList[index].sectionFourQuestionEight,
+                          sectionFourQuestionNine: historyProvider
+                              .historyList[index].sectionFourQuestionNine,
+                          sectionFourQuestionTen: historyProvider
+                              .historyList[index].sectionFourQuestionTen,
+                          sectionFourQuestionEleven: historyProvider
+                              .historyList[index].sectionFourQuestionEleven,
+                          sectionFourQuestionTweleve: historyProvider
+                              .historyList[index].sectionFourQuestionTweleve,
                         );
                       }
 

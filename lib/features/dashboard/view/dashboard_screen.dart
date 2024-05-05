@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:mobileapp_scabies/core/constants/colors.dart';
 import 'package:mobileapp_scabies/features/dashboard/provider/dashboard_provider.dart';
-import 'package:mobileapp_scabies/features/scanning/view/report__screen.dart';
+import 'package:mobileapp_scabies/features/scanning/view/report_data_diri_screen.dart';
 import 'package:provider/provider.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -25,7 +25,7 @@ class DashboardScreen extends StatelessWidget {
                       context,
                       PageRouteBuilder(
                         pageBuilder: (context, animation, secondaryAnimation) =>
-                            const ReportScreen(),
+                            const ReportDataDiriScreen(),
                         transitionsBuilder:
                             (context, animation, secondaryAnimation, child) {
                           const begin = Offset(0.0, 1.0);
