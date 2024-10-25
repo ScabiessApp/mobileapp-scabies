@@ -5,7 +5,8 @@ class ScanningService {
   // Dio Untuk get tanpa interceptor
   final Dio dio = Dio(
     BaseOptions(
-      baseUrl: 'http://34.16.43.45/',
+      // baseUrl: 'http://34.16.43.45/',
+      baseUrl: 'http://3.238.228.56/',
     ),
   );
 
